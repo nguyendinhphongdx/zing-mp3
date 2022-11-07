@@ -2,6 +2,8 @@ html,
 body {
   padding: 0;
   margin: 0;
+  height: 100vh;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,14 +15,33 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Inter, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
-    background: black;
+    background: #170f23;
   }
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #736980;
+}
+*{
+  overflow-y: auto;
 }
