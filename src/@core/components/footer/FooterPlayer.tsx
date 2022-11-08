@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
 import { Icon } from '@iconify/react';
+import Lottie from 'react-lottie';
+import animationData from '../../../../public/lottie/play-pause.json';
 
 import { SongItem } from '../../../types';
 import styles from '../../styles/footer.module.scss';
@@ -61,6 +63,14 @@ interface ControlMediaProps {
 
 const ControlMedia: FC<ControlMediaProps> = (props: ControlMediaProps) => {
     const { song } = props;
+    const defaultOptions = {
+        loop: false,
+        autoplay: false,
+        animationData: animationData,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice"
+        }
+      };
     return (
         <div className={styles.songContainer}>
             <div className={styles.image}>
@@ -73,6 +83,11 @@ const ControlMedia: FC<ControlMediaProps> = (props: ControlMediaProps) => {
             <div className={styles.actions}>
                 <Icon icon="ant-design:heart-filled" />
                 <Icon icon="bi:three-dots" />
+                <Lottie
+                    options={defaultOptions}
+                    height={400}
+                    width={400}
+                />
             </div>
         </div>
     );
