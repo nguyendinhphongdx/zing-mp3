@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 20px;
+  .songContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    .image {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .mation {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .name {
+        font-size: 0.9rem;
+        padding: 0;
+        margin: 0;
+      }
+      .singer {
+        font-size: 0.8rem;
+        font-weight: 200;
+        padding-top: 5px;
+        color: rgb(162, 174, 188);
+      }
+    }
+    .actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+  }
+}
