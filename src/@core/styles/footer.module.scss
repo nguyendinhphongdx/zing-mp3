@@ -30,9 +30,35 @@
       }
     }
     .actions {
-        display: flex;
-        gap: 10px;
-        align-items: center;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+  }
+  .mediaPlayer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    .actions {
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slideSeek {
+      width: 100%;
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .duration {
+        font-size: 12px;
+        margin: 0px 10px;
+      }
     }
   }
 }
