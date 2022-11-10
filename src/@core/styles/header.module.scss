@@ -1,0 +1,48 @@
+.container {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.bgBlur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#6b5a81;
+    filter: blur(500px);
+    box-shadow: 0 4px 2px -2px gray;
+}
+.headerLeft {
+    display: flex;
+    gap: 20px;
+}
+.direct{
+    display: flex;
+    gap: 10px;
+}
+.searchBox {
+    position: relative;
+    display: flex;
+    width: 500px;
+}
+.iconSearch {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+.inputSearch {
+    width: 100%;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    padding: 12px 30px 12px 50px;
+    font-size: 14px;
+    background-color:#473e54;
+    ::placeholder {
+        color: #fff;
+    }
+}

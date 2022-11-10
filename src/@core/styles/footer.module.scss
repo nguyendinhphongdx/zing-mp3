@@ -2,16 +2,28 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  overflow: unset;
   padding: 0px 20px;
   .songContainer {
     display: flex;
     flex-direction: row;
     gap: 15px;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    overflow: unset;
+    .fly {
+      position: absolute;
+      z-index: 1000;
+    }
     .image {
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
+      width: 62px;
+      height: 62px;
       overflow: hidden;
+      border-radius: 50%;
+      .rotate {
+        animation: rotating 20s linear infinite;
+      }
     }
     .mation {
       display: flex;
@@ -40,7 +52,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    flex: 1;
+    flex: 3;
     .actions {
       display: flex;
       gap: 15px;
@@ -51,7 +63,6 @@
 
     .slideSeek {
       width: 100%;
-      padding-top: 10px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -60,5 +71,19 @@
         margin: 0px 10px;
       }
     }
+  }
+  .flexEnd {
+    justify-content: flex-end;
+  }
+}
+.icon {
+  padding: 20px;
+}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

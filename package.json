@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@iconify/react": "^4.0.0",
+    "@types/react-lottie": "^1.2.6",
     "sass": "^1.56.0"
   }
 }

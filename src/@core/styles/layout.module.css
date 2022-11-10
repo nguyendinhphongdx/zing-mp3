@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 }
 .footer {
     display: flex;
@@ -15,6 +15,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sideRight{
+    width: 0px !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,6 +39,8 @@
 .sidebar {
     width: 240px;
     background-color: hsla(0,0%,100%,0.05);
+    transition: all 1s;
+
 }
 .mainContainer {
     

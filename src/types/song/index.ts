@@ -4,7 +4,6 @@ export interface SongItem {
     name: string;
     singer: string;
     source: string;
-    duration: string;
     description: string;
     isFavorite?: boolean;
 }
