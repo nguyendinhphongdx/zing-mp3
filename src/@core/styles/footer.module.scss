@@ -33,6 +33,9 @@
         font-size: 0.9rem;
         padding: 0;
         margin: 0;
+        animation: slide-left 20s linear infinite;
+        overflow: hidden;
+        white-space: nowrap;
       }
       .singer {
         font-size: 0.8rem;
@@ -79,11 +82,30 @@
 .icon {
   padding: 20px;
 }
+.hiddenScroll {
+  overflow: hidden;
+}
 @keyframes rotating {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .mediaPlayer {
+    max-width: 500px;
+  }
+}
+@keyframes slide-left {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }

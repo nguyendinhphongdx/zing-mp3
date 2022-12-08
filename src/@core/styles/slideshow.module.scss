@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    display : flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+.box {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s;
+    img {
+        height: 100%;
+    }
+}
+.toCenter {
+    transform: translateX(calc(100% + 25px));
+}
+.toLeft {
+    transform: translateX(calc(-100% - 25px));
+}

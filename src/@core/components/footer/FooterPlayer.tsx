@@ -125,8 +125,8 @@ const SongContainer: FC<CardSongProps> = (props: CardSongProps) => {
                 <span className={styles.singer}>{props.song.singer}</span>
             </div>
             <div className={styles.actions}>
-                <Icon icon="ant-design:heart-filled" />
-                <Icon icon="bi:three-dots" />
+                <Icon icon="ant-design:heart-filled" width={25} />
+                <Icon icon="bi:three-dots" width={25} />
             </div>
         </div>
     );
@@ -143,13 +143,13 @@ const ControlMedia: FC<ControlMediaProps> = (props: ControlMediaProps) => {
     return (
         <div className={[styles.songContainer, styles.flexEnd].join(' ')}>
             <div className={styles.actions}>
-                <div className="icon">
+                <div className={styles.hiddenScroll}>
                     <Icon icon="ant-design:youtube-outlined" height={20} />
                 </div>
-                <div className="icon">
+                <div className={styles.hiddenScroll}>
                     <Icon icon="maki:karaoke" height={20} />
                 </div>
-                <div className="icon">
+                <div className={styles.hiddenScroll}>
                     <Icon icon="carbon:shrink-screen" height={20} />
                 </div>
 

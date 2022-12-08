@@ -1,9 +1,11 @@
 import React, { FC } from "react";
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from "next/router";
 import { Icon } from '@iconify/react';
 
 import styles from '../../styles/sidebar.module.scss';
+import { getActiveNavItem } from "../../ultis/helpers";
 interface Props {
 
 }
@@ -23,36 +25,41 @@ const routes = [
     {
         title: '#zingchart',
         icon: '/images/chart.png',
-        path: '/about',
+        path: '/chart',
     },
     {
         title: 'Radio',
         isNew: true,
         icon: '/images/circle.png',
-        path: '/about',
+        path: '/radio',
     },
     {
         title: 'Theo dõi',
         icon: '/images/newspaper.png',
-        path: '/about',
+        path: '/track',
     }
 ]
 const features = [
     {
         title: 'Nhạc Mới',
         icon: '/images/node.png',
+        path: '/news',
     },
     {
         title: 'Thể Loại',
         icon: '/images/node.png',
+        path: '/category',
     },
     {
         title: 'Top 100',
         icon: '/images/node.png',
+        path: 'top',
     },
     {
         title: 'MV',
         icon: '/images/node.png',
+        path: 'mv',
+
     },
 ];
 const cards = [
@@ -106,12 +113,14 @@ interface PropsItem {
     icon?: string;
     isNew?: boolean;
     active?: boolean;
-    path?: string;
+    path: string;
 }
+
 const NavBarItem: FC<PropsItem> = (props: PropsItem) => {
+    const router = useRouter();
     return (
         <Link href={props.path || '/'}>
-            <div className={[styles.row, props.active ? styles.active : ''].join(' ')}>
+            <div className={[styles.row, getActiveNavItem(props.path, router.pathname) ? styles.active : ''].join(' ')}>
                 <Image src={props.icon || '/folder-music.png'} width={30} height={30} alt="" />
                 <span className={styles.navbarTitle}>
                     {props.title}

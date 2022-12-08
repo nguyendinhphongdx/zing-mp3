@@ -25,7 +25,7 @@ const UserLayout: FC<Props> = (props: Props) => {
 
                     </main>
                 </div>
-                <div className={[styles.sidebar, state ? styles.sideRight : ''].join(' ')}>
+                <div className={[styles.sidebar, styles.sideRight].join(' ')}>
                     sidebar-right
                 </div>
             </div>

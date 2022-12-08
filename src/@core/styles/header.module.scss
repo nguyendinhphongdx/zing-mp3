@@ -2,6 +2,8 @@
     padding: 20px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
 }
 .bgBlur {
     position: absolute;
@@ -45,4 +47,15 @@
     ::placeholder {
         color: #fff;
     }
+}
+.headerRight {
+    display: flex;
+    gap: 10px;
+}
+
+.iconCircle {
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgb(46, 46, 76);
 }
