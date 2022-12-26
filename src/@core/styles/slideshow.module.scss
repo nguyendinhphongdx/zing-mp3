@@ -1,20 +1,43 @@
 .container {
-    width: 100%;
-    display : flex;
-    margin-top: 10px;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  position: relative;
+  height: 250px;
 }
 .box {
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.5s;
-    img {
-        height: 100%;
-    }
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s linear;
+  img {
+    height: 100%;
+  }
 }
 .toCenter {
-    transform: translateX(calc(100% + 25px));
+  transform: translateX(calc(100% + 10px));
+  animation: fake 0.5s ease-in-out;
 }
 .toLeft {
-    transform: translateX(calc(-100% - 25px));
+  transform: translateX(calc(-100% - 10px));
+  animation: fake 0.5s ease-in-out;
+}
+.toRight {
+  transform: translateX(calc(200% + 20px));
+  animation: fake 0.5s ease-in-out;
+}
+@keyframes fake {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }

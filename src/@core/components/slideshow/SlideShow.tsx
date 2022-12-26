@@ -1,47 +1,56 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import styles from '../../styles/slideshow.module.scss';
 const images = ['/images/slide1.jpeg', '/images/slide2.jpeg', '/images/slide3.jpeg', '/images/slide4.jpeg'];
 const SlideShow = () => {
 
     const next = () => {
         const images = document.getElementsByClassName('image-slide');
-
-        if (images.length > 1) {
+        if (images.length > 0) {
             for (let i = 0; i < images.length; i++) {
-                images[i].classList.remove('to-center');
-                images[i].classList.remove('to-left');
+                if (images[i].classList.contains(styles.toCenter)) {
+                    images[i].classList.add(styles.toRight);
+                    images[i].classList.remove(styles.toCenter);
+                } else if (images[i].classList.contains(styles.toRight)) {
+                    images[i].classList.remove(styles.toCenter);
+                    images[i].classList.remove(styles.toRight);
+                } else {
+                    images[i].classList.add(styles.toCenter);
+                }
             }
-            images[0].classList.toggle('to-center');
-            images[1].classList.toggle('to-left');
-            images[2].classList.toggle('to-left');
         }
     }
     const generateAnimatedSlide = (number: number) => {
         if (number === 0) {
+            return '';
+        }
+        if (number === 1) {
             return styles.toCenter;
         }
-        if (number === 1 || number === 2) {
-            return styles.toLeft;
-        }
-        if (number === 3) {
+        if (number === 2) {
             return styles.toRight;
         }
     }
 
+    useEffect(() => {
+        const timmer = setInterval(() => {
+            next();
+        }, 3000);
+        return () => clearInterval(timmer);
+    }, [])
     return (
         <>
             <div className={styles.container}>
                 {
-                    images.slice(0, 4).map((image, index) => {
+                    images.slice(0, 3).map((image, index) => {
                         return (
-                            <div key={image} className={[styles.box, generateAnimatedSlide(index)].join(' ')}>
+                            <div key={image} className={[styles.box, 'image-slide', generateAnimatedSlide(index)].join(' ')}>
                                 <Image key={image} src={image} alt={image} width={430} height={250} />
                             </div>
                         );
                     })
                 }
             </div>
-            <button onClick={next}>Next</button>
         </>
     );
 }

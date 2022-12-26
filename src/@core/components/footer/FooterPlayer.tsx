@@ -28,7 +28,7 @@ const FooterPlayer: FC<Props> = (props: Props) => {
     const [currentTime, setCurrentTime] = useState(0);
     const [state, setState] = useState({
         playing: false,
-        currentVolume: 30,
+        currentVolume: 15,
         duration: 0,
     });
     const handleChangeState = (object: any) => {
@@ -63,16 +63,13 @@ const FooterPlayer: FC<Props> = (props: Props) => {
             }
         }
 
-    }, [state.playing])
+    }, [state.playing]);
 
-    // useEffect(() => {
-    //     if(refAudio.current?.currentTime){
-    //         setState({
-    //             ...state,
-    //             currentTime: refAudio.current?.currentTime
-    //         });
-    //     }
-    // }, [refAudio.current?.currentTime])
+    useEffect(() => {
+        if (refAudio && refAudio.current) {
+            refAudio.current.volume = (state.currentVolume/100);
+        }
+    }, [state.currentVolume]);
 
     return (
         <div className={styles.container}>
@@ -162,7 +159,7 @@ const ControlMedia: FC<ControlMediaProps> = (props: ControlMediaProps) => {
                         id="volume-slider"
                         max="100"
                         value={volume}
-                        onChange={(e) => onChangeState({ valueVolume: e.target.value })}
+                        onChange={(e) => onChangeState({ currentVolume: e.target.value })}
                     />
                 </div>
             </div>
