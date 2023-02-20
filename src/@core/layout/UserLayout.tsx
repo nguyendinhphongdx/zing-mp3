@@ -20,7 +20,7 @@ const UserLayout: FC<Props> = (props: Props) => {
                 </div>
                 <div style={{ flex: 'auto', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                     <HeaderSearch />
-                    <main style={{ height: '-webkit-fill-available' }}>
+                    <main style={{ height: '-webkit-fill-available', overflow: 'auto' }}>
                         {props.children}
 
                     </main>

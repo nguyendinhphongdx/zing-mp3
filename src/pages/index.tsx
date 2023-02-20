@@ -46,7 +46,7 @@ export default function Home() {
         <Icon icon="ant-design:play-circle-filled" color="#033dfc" width={50} />
       </div> */}
       <SlideShow />
-      <div className="particle">
+      <div className={styles.particle}>
         <p className={styles.description}>
           Hay nhất của 2022
           <Icon icon="material-symbols:star-rounded" color="#c3ff03" width={30} />
@@ -76,12 +76,33 @@ export default function Home() {
           }
         </div>
       </div>
-      <div className="particle">
+      <div className={styles.particle}>
         <p className={styles.description}>
           Mới phát hành
         </p>
-        <div className={styles.newRelease}>
-
+        <div className={styles.grid}>
+          {
+            thumbnails.map((thumb, index) => {
+              return (
+                <div className={styles.card} key={index}>
+                  <div className={styles.over_hidden_image}>
+                    <Image
+                      width={250}
+                      height={250}
+                      src={'/images/thumbnails/' + thumb.thumbnail}
+                      alt={thumb.thumbnail}
+                    />
+                  </div>
+                  <div className={styles.title}>
+                    {thumb.title}
+                  </div>
+                  <div className={styles.desc}>
+                    {thumb.description}
+                  </div>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
     </main>
