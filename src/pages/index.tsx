@@ -56,12 +56,14 @@ export default function Home() {
             thumbnails.map((thumb, index) => {
               return (
                 <div className={styles.card} key={index}>
-                  <Image
-                    width={250}
-                    height={250}
-                    src={'/images/thumbnails/' + thumb.thumbnail}
-                    alt={thumb.thumbnail}
-                  />
+                  <div className={styles.over_hidden_image}>
+                    <Image
+                      width={250}
+                      height={250}
+                      src={'/images/thumbnails/' + thumb.thumbnail}
+                      alt={thumb.thumbnail}
+                    />
+                  </div>
                   <div className={styles.title}>
                     {thumb.title}
                   </div>
@@ -79,7 +81,7 @@ export default function Home() {
           Mới phát hành
         </p>
         <div className={styles.newRelease}>
-          
+
         </div>
       </div>
     </main>

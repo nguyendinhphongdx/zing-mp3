@@ -104,3 +104,10 @@
   color: rgb(134, 122, 122);
   flex-wrap: wrap;
 }
+.over_hidden_image{
+  overflow: hidden;
+}
+.over_hidden_image img {
+  height:100%;
+  width: 100%;
+}

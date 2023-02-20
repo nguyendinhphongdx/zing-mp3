@@ -14,7 +14,7 @@ const UserLayout: FC<Props> = (props: Props) => {
     const [state, setState] = useState(false);
     return (
         <div className={styles.container}>
-            <div style={{ display: 'flex', flex: 1 }}>
+            <div style={{ display: 'flex', flex: 1, overflow: 'auto' }}>
                 <div className={[styles.sidebar, styles.sidebarLeft].join(" ")}>
                     <SidebarLeft />
                 </div>

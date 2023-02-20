@@ -46,9 +46,6 @@ a {
   border-radius: 10px;
   background-color: #736980;
 }
-* {
-  overflow-y: auto;
-}
 output {
   display: inline-block;
   text-align: center;
