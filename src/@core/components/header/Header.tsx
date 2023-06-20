@@ -26,12 +26,12 @@ const HeaderSearch = () => {
             <div className={styles.bgBlur}></div>
             <div className={styles.headerLeft}>
                 <div className={styles.direct}>
-                    <Icon icon="ant-design:arrow-left-outlined" color="#ccc" width={25} />
-                    <Icon icon="ant-design:arrow-right-outlined" color="#ccc" width={25} />
+                    <Icon icon="ant-design:arrow-left-outlined" color="#ccc" width={20} />
+                    <Icon icon="ant-design:arrow-right-outlined" color="#ccc" width={20} />
                 </div>
                 <div className={styles.searchBox}>
                     <div className={styles.iconSearch}>
-                        <Icon icon="akar-icons:search" color="#ccc" width={20} />
+                        <Icon icon="akar-icons:search" color="#ccc" width={18} />
                     </div>
                     <input placeholder='Tìm kiếm bài hát, nghệ sĩ, lời bài hát ...' className={styles.inputSearch} />
                 </div>
@@ -53,7 +53,7 @@ interface PropsCircle {
 }
 
 const CircleImageButton: FC<PropsCircle> = (props: PropsCircle) => {
-    const { width = 30, height = 30, image } = props;
+    const { width = 25, height = 25, image } = props;
     return (
         <div className={styles.iconCircle}>
             <Icon icon={image} color="#ccc" width={width} height={height} />

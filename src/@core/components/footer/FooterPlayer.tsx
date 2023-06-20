@@ -108,8 +108,8 @@ const SongContainer: FC<CardSongProps> = (props: CardSongProps) => {
             <>
                 <div className={styles.fly}>
                     <Lottie options={defaultOptions}
-                        height={100}
-                        width={70}
+                        height={70}
+                        width={60}
                         isStopped={!playing}
                     />
                 </div>
@@ -122,8 +122,8 @@ const SongContainer: FC<CardSongProps> = (props: CardSongProps) => {
                 <span className={styles.singer}>{props.song.singer}</span>
             </div>
             <div className={styles.actions}>
-                <Icon icon="ant-design:heart-filled" width={25} />
-                <Icon icon="bi:three-dots" width={25} />
+                <Icon icon="ant-design:heart-filled" width={18} />
+                <Icon icon="bi:three-dots" width={18} />
             </div>
         </div>
     );
@@ -141,18 +141,18 @@ const ControlMedia: FC<ControlMediaProps> = (props: ControlMediaProps) => {
         <div className={[styles.songContainer, styles.flexEnd].join(' ')}>
             <div className={styles.actions}>
                 <div className={styles.hiddenScroll}>
-                    <Icon icon="ant-design:youtube-outlined" height={20} />
+                    <Icon icon="ant-design:youtube-outlined" height={18} />
                 </div>
                 <div className={styles.hiddenScroll}>
-                    <Icon icon="maki:karaoke" height={20} />
+                    <Icon icon="maki:karaoke" height={18} />
                 </div>
                 <div className={styles.hiddenScroll}>
-                    <Icon icon="carbon:shrink-screen" height={20} />
+                    <Icon icon="carbon:shrink-screen" height={18} />
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
                     <div className="icon">
-                        <Icon icon="clarity:volume-up-solid" height={20} />
+                        <Icon icon="clarity:volume-up-solid" height={18} />
                     </div>
                     <input
                         type="range"
@@ -182,24 +182,24 @@ const MediaPlayer: FC<MediaPlayerProps> = (props: MediaPlayerProps) => {
         <div className={styles.mediaPlayer}>
             <div className={styles.actions}>
                 <div className="icon">
-                    <Icon icon="el:random" color="white" />
+                    <Icon icon="el:random" color="white" height={15}/>
                 </div>
                 <div className="icon">
-                    <Icon icon="bx:skip-previous" color="white" height={30} />
+                    <Icon icon="bx:skip-previous" color="white" height={20} />
                 </div>
                 <div className="icon">
                     {
                         playing
-                            ? <Icon icon="bx:pause-circle" height={30} onClick={() => onChangeState({ playing: false })} />
-                            : <Icon icon="ant-design:play-circle-outlined" height={30} onClick={() => onChangeState({ playing: true })} />
+                            ? <Icon icon="bx:pause-circle" height={25} onClick={() => onChangeState({ playing: false })} />
+                            : <Icon icon="ant-design:play-circle-outlined" height={25} onClick={() => onChangeState({ playing: true })} />
                     }
                 </div>
                 <div className="icon">
-                    <Icon icon="bx:skip-next" color="white" height={30} />
+                    <Icon icon="bx:skip-next" color="white" height={18} />
 
                 </div>
                 <div className="icon">
-                    <Icon icon="cil:loop" color="white" />
+                    <Icon icon="cil:loop" color="white" height={15} />
 
                 </div>
             </div>

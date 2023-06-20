@@ -58,8 +58,8 @@ export default function Home() {
                 <div className={styles.card} key={index}>
                   <div className={styles.over_hidden_image}>
                     <Image
-                      width={250}
-                      height={250}
+                      width={200}
+                      height={200}
                       src={'/images/thumbnails/' + thumb.thumbnail}
                       alt={thumb.thumbnail}
                     />

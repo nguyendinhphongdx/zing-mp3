@@ -77,7 +77,7 @@ const SidebarLeft: FC<Props> = (props: Props) => {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
             <div className={styles.logo}>
-                <Image src={'/images/logo-dark.svg'} alt="logo-dark.svg" width={120} height={40} />
+                <Image src={'/images/logo-dark.svg'} alt="logo-dark.svg" width={110} height={30} />
             </div>
             <div className="container">
                 {

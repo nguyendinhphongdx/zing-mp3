@@ -52,8 +52,8 @@ output {
 }
 #volume-slider,
 #seek-slide {
-  margin: 10px 2.5%;
-  width: 58%;
+  margin: 2px 5px;
+  width: 100%;
 }
 #volume-slider::-webkit-slider-runnable-track,
 #seek-slide::-webkit-slider-runnable-track {
@@ -191,4 +191,7 @@ input[type="range"]:active::-ms-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+svg.iconify.iconify--ant-design {
+  cursor: pointer;
 }

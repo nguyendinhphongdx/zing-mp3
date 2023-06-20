@@ -45,7 +45,7 @@ const SlideShow = () => {
                     images.slice(0, 3).map((image, index) => {
                         return (
                             <div key={image} className={[styles.box, 'image-slide', generateAnimatedSlide(index)].join(' ')}>
-                                <Image key={image} src={image} alt={image} width={430} height={250} />
+                                <Image key={image} src={image} alt={image} width={360} height={200} />
                             </div>
                         );
                     })
